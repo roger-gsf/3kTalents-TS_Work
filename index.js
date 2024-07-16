@@ -29,14 +29,14 @@ function menu() {
         case 1:
             console.clear();
             console.log('Product list:');
-            console.log("1 - ".concat(rice._name));
-            console.log("2 - ".concat(bean._name));
-            console.log("3 - ".concat(tShirt._name));
-            console.log("4 - ".concat(jeans._name));
-            console.log("5 - ".concat(sofa._name));
-            console.log("6 - ".concat(table._name));
+            console.log("1 - ".concat(rice._name, " - R$ ").concat(rice.price));
+            console.log("2 - ".concat(bean._name, " - R$ ").concat(bean.price));
+            console.log("3 - ".concat(tShirt._name, " - R$ ").concat(tShirt.price));
+            console.log("4 - ".concat(jeans._name, " - R$ ").concat(jeans._name));
+            console.log("5 - ".concat(sofa._name, " - R$ ").concat(sofa._name));
+            console.log("6 - ".concat(table._name, " - R$ ").concat(table._name));
+            console.log("Type 0 to back to menu.");
             var selectedProduct = readlineSync.questionInt('Select product by code: ');
-            console.clear();
             buyProduct(selectedProduct);
             break;
         case 2:
@@ -94,6 +94,9 @@ function buyProduct(productCode) {
             shoppingCart.push(table);
             console.log("".concat(table._name, " was added in the shopping cart."));
             break;
+        case 0:
+            callMenu();
+            break;
         default:
             console.log('Invalid product code!');
             callMenu();
@@ -105,7 +108,7 @@ function seeShoppingCart() {
     if (shoppingCart.length > 0) {
         console.log('Items in the shopping cart:');
         shoppingCart.forEach(function (item) {
-            console.log("- ".concat(item._name));
+            console.log("- ".concat(item._name, " - R$ ").concat(item.price));
         });
     }
     else {
@@ -121,6 +124,7 @@ function pay() {
         console.log('1 - PayPal');
         console.log('2 - Credit Card');
         console.log('3 - Cash');
+        console.log('0 - Back to menu');
         var paymentMethod = readlineSync.questionInt('Choose a payment method: ');
         switch (paymentMethod) {
             case 1:
@@ -131,6 +135,9 @@ function pay() {
                 break;
             case 3:
                 cash.pay(totalValue);
+                break;
+            case 0:
+                callMenu();
                 break;
             default:
                 console.log('Invalid payment method!');

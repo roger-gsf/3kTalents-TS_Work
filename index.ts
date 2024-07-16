@@ -38,17 +38,16 @@ function menu(): void {
         case 1:
             console.clear();
             console.log('Product list:');
-            console.log(`1 - ${rice._name} - ${rice.price}`);
-            console.log(`2 - ${bean._name} - ${bean.price}`);
-            console.log(`3 - ${tShirt._name}`);
-            console.log(`4 - ${jeans._name}`);
-            console.log(`5 - ${sofa._name}`);
-            console.log(`6 - ${table._name}`);
-            console.log(`0 - Back to menu`);
-            
+            console.log(`1 - ${rice._name} - R$ ${rice.price}`);
+            console.log(`2 - ${bean._name} - R$ ${bean.price}`);
+            console.log(`3 - ${tShirt._name} - R$ ${tShirt.price}`);
+            console.log(`4 - ${jeans._name} - R$ ${jeans._name}`);
+            console.log(`5 - ${sofa._name} - R$ ${sofa._name}`);
+            console.log(`6 - ${table._name} - R$ ${table._name}`);
+            console.log(`Type 0 to back to menu.`);
+
 
             const selectedProduct: number = readlineSync.questionInt('Select product by code: ');
-            console.clear();
             buyProduct(selectedProduct);
             break;
         case 2:
@@ -123,7 +122,7 @@ function seeShoppingCart(): void {
     if (shoppingCart.length > 0) {
         console.log('Items in the shopping cart:');
         shoppingCart.forEach(item => {
-            console.log(`- ${item._name}`);
+            console.log(`- ${item._name} - R$ ${item.price}`);
         });
     } else {
         console.log(`The shopping cart is empty!`);
@@ -140,7 +139,7 @@ function pay(): void {
         console.log('2 - Credit Card');
         console.log('3 - Cash');
         console.log('0 - Back to menu');
-        
+
         let paymentMethod: number = readlineSync.questionInt('Choose a payment method: ');
 
         switch (paymentMethod) {
