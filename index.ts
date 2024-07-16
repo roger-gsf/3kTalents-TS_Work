@@ -154,7 +154,7 @@ function pay(): void {
                 break;
             case 0:
                 callMenu();
-                break;
+                return;
             default:
                 console.log('Invalid payment method!');
                 callMenu();
