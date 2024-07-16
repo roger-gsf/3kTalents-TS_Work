@@ -7,9 +7,8 @@ var Clothe = /** @class */ (function () {
         this.type = type;
         this.price = price;
     }
-    Clothe.prototype.calculateTotalValue = function (totalValue, fee) {
-        if (fee === void 0) { fee = 0.05; }
-        return totalValue * (1 + fee);
+    Clothe.prototype.calculateTotalValue = function (totalValue) {
+        return totalValue * 1.05;
     };
     return Clothe;
 }());

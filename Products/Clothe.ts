@@ -11,7 +11,7 @@ export class Clothe implements Products {
         this.price = price;
     }
 
-    calculateTotalValue(totalValue: number, fee: number = 0.05): number {
-        return totalValue * (1 + fee);
+    calculateTotalValue(totalValue: number): number {
+        return totalValue * 1.05;
     }
 }

@@ -8,11 +8,17 @@ var PayPal_1 = require("./PaymentMethods/PayPal");
 var CreditCard_1 = require("./PaymentMethods/CreditCard");
 var Cash_1 = require("./PaymentMethods/Cash");
 var rice = new Food_1.Food('Rice', 'Grain food', 20.00, 5);
+rice.price = rice.calculateTotalValue(Number(rice.price.toFixed(2)));
 var bean = new Food_1.Food('Bean', 'Grain food', 15.00, 2);
+bean.price = bean.calculateTotalValue(Number(bean.price.toFixed(2)));
 var tShirt = new Clothe_1.Clothe('T-shirt', 'Casual clothe', 70.00);
+tShirt.price = tShirt.calculateTotalValue(Number(tShirt.price.toFixed(2)));
 var jeans = new Clothe_1.Clothe('Jeans', 'Denim clothe', 100.00);
+jeans.price = jeans.calculateTotalValue(Number(jeans.price.toFixed(2)));
 var sofa = new Furniture_1.Furniture('Sofa', 'Basic furniture', 1200.00);
+sofa.price = rice.calculateTotalValue(Number(sofa.price.toFixed(2)));
 var table = new Furniture_1.Furniture('Table', 'Dining table', 800.00);
+table.price = rice.calculateTotalValue(Number(table.price.toFixed(2)));
 var payPal = new PayPal_1.PayPal();
 var creditCard = new CreditCard_1.CreditCard();
 var cash = new Cash_1.Cash();
@@ -124,7 +130,7 @@ function pay() {
         console.log('1 - PayPal');
         console.log('2 - Credit Card');
         console.log('3 - Cash');
-        console.log('0 - Back to menu');
+        console.log('Type 0 to back back to menu');
         var paymentMethod = readlineSync.questionInt('Choose a payment method: ');
         switch (paymentMethod) {
             case 1:

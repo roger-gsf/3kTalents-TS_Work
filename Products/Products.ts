@@ -3,5 +3,5 @@ export interface Products {
     type: string;
     price: number;
 
-    calculateTotalValue(totalValue: number, fee?: number): number;
+    calculateTotalValue(totalValue: number): number;
 }

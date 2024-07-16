@@ -8,9 +8,8 @@ var Food = /** @class */ (function () {
         this.price = price;
         this.weight = weight;
     }
-    Food.prototype.calculateTotalValue = function (totalValue, fee) {
-        if (fee === void 0) { fee = 0.02; }
-        return totalValue * (1 + fee);
+    Food.prototype.calculateTotalValue = function (totalValue) {
+        return totalValue * 1.02;
     };
     return Food;
 }());

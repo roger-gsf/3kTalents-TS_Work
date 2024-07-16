@@ -10,11 +10,22 @@ import { CreditCard } from './PaymentMethods/CreditCard';
 import { Cash } from './PaymentMethods/Cash';
 
 const rice: Food = new Food('Rice', 'Grain food', 20.00, 5);
+rice.price = rice.calculateTotalValue(Number(rice.price.toFixed(2)));
+
 const bean: Food = new Food('Bean', 'Grain food', 15.00, 2);
+bean.price = bean.calculateTotalValue(Number(bean.price.toFixed(2)));
+
 const tShirt: Clothe = new Clothe('T-shirt', 'Casual clothe', 70.00);
+tShirt.price = tShirt.calculateTotalValue(Number(tShirt.price.toFixed(2)));
+
 const jeans: Clothe = new Clothe('Jeans', 'Denim clothe', 100.00);
+jeans.price = jeans.calculateTotalValue(Number(jeans.price.toFixed(2)));
+
 const sofa: Furniture = new Furniture('Sofa', 'Basic furniture', 1200.00);
+sofa.price = rice.calculateTotalValue(Number(sofa.price.toFixed(2)));
+
 const table: Furniture = new Furniture('Table', 'Dining table', 800.00);
+table.price = rice.calculateTotalValue(Number(table.price.toFixed(2)));
 
 const payPal: PayPal = new PayPal();
 const creditCard: CreditCard = new CreditCard();
@@ -45,7 +56,6 @@ function menu(): void {
             console.log(`5 - ${sofa._name} - R$ ${sofa.price}`);
             console.log(`6 - ${table._name} - R$ ${table.price}`);
             console.log(`Type 0 to back to menu.`);
-
 
             const selectedProduct: number = readlineSync.questionInt('Select product by code: ');
             buyProduct(selectedProduct);
@@ -138,7 +148,7 @@ function pay(): void {
         console.log('1 - PayPal');
         console.log('2 - Credit Card');
         console.log('3 - Cash');
-        console.log('0 - Back to menu');
+        console.log('Type 0 to back back to menu');
 
         let paymentMethod: number = readlineSync.questionInt('Choose a payment method: ');
 

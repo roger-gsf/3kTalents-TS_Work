@@ -13,9 +13,7 @@ export class Food implements Products {
         this.weight = weight;
     }
 
-
-
-    calculateTotalValue(totalValue: number, fee: number = 0.02): number {
-        return totalValue * (1 + fee);
+    calculateTotalValue(totalValue: number): number {
+        return totalValue * 1.02;
     }
 }
