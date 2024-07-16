@@ -38,12 +38,15 @@ function menu(): void {
         case 1:
             console.clear();
             console.log('Product list:');
-            console.log(`1 - ${rice._name}`);
-            console.log(`2 - ${bean._name}`);
+            console.log(`1 - ${rice._name} - ${rice.price}`);
+            console.log(`2 - ${bean._name} - ${bean.price}`);
             console.log(`3 - ${tShirt._name}`);
             console.log(`4 - ${jeans._name}`);
             console.log(`5 - ${sofa._name}`);
             console.log(`6 - ${table._name}`);
+            console.log(`0 - Back to menu`);
+            
+
             const selectedProduct: number = readlineSync.questionInt('Select product by code: ');
             console.clear();
             buyProduct(selectedProduct);
@@ -105,6 +108,9 @@ function buyProduct(productCode: number): void {
             shoppingCart.push(table);
             console.log(`${table._name} was added in the shopping cart.`);
             break;
+        case 0:
+            callMenu();
+            break;
         default:
             console.log('Invalid product code!');
             callMenu();
@@ -133,6 +139,8 @@ function pay(): void {
         console.log('1 - PayPal');
         console.log('2 - Credit Card');
         console.log('3 - Cash');
+        console.log('0 - Back to menu');
+        
         let paymentMethod: number = readlineSync.questionInt('Choose a payment method: ');
 
         switch (paymentMethod) {
@@ -144,6 +152,9 @@ function pay(): void {
                 break;
             case 3:
                 cash.pay(totalValue);
+                break;
+            case 0:
+                callMenu();
                 break;
             default:
                 console.log('Invalid payment method!');
