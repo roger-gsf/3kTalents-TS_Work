@@ -41,9 +41,9 @@ function menu(): void {
             console.log(`1 - ${rice._name} - R$ ${rice.price}`);
             console.log(`2 - ${bean._name} - R$ ${bean.price}`);
             console.log(`3 - ${tShirt._name} - R$ ${tShirt.price}`);
-            console.log(`4 - ${jeans._name} - R$ ${jeans._name}`);
-            console.log(`5 - ${sofa._name} - R$ ${sofa._name}`);
-            console.log(`6 - ${table._name} - R$ ${table._name}`);
+            console.log(`4 - ${jeans._name} - R$ ${jeans.price}`);
+            console.log(`5 - ${sofa._name} - R$ ${sofa.price}`);
+            console.log(`6 - ${table._name} - R$ ${table.price}`);
             console.log(`Type 0 to back to menu.`);
 
 

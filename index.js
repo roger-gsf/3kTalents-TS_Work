@@ -32,9 +32,9 @@ function menu() {
             console.log("1 - ".concat(rice._name, " - R$ ").concat(rice.price));
             console.log("2 - ".concat(bean._name, " - R$ ").concat(bean.price));
             console.log("3 - ".concat(tShirt._name, " - R$ ").concat(tShirt.price));
-            console.log("4 - ".concat(jeans._name, " - R$ ").concat(jeans._name));
-            console.log("5 - ".concat(sofa._name, " - R$ ").concat(sofa._name));
-            console.log("6 - ".concat(table._name, " - R$ ").concat(table._name));
+            console.log("4 - ".concat(jeans._name, " - R$ ").concat(jeans.price));
+            console.log("5 - ".concat(sofa._name, " - R$ ").concat(sofa.price));
+            console.log("6 - ".concat(table._name, " - R$ ").concat(table.price));
             console.log("Type 0 to back to menu.");
             var selectedProduct = readlineSync.questionInt('Select product by code: ');
             buyProduct(selectedProduct);
